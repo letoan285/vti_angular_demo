@@ -7,6 +7,7 @@ import { HeaderComponent } from './presentation/components/header/header.compone
 import { FooterComponent } from './presentation/components/footer/footer.component';
 import { HomeComponent } from './presentation/components/home/home.component';
 import { DefaultLayoutComponent } from './presentation/components/default-layout/default-layout.component';
+import { AboutComponent } from './presentation/components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DefaultLayoutComponent } from './presentation/components/default-layout
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    DefaultLayoutComponent
+    DefaultLayoutComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

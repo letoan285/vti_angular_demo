@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FooterComponent } from './presentation/components/footer/footer.component';
 import { HomeComponent } from './presentation/components/home/home.component';
+import { AboutComponent } from './presentation/components/about/about.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'footer',
     component: FooterComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: 'users',
@@ -23,6 +28,10 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: () => import('./presentation/modules/products/products.module').then(m => m.ProductsModule)
+  },
+  {
+    path: 'categories',
+    loadChildren: () => import('./presentation/modules/categories/categories.module').then(m => m.CategoriesModule)
   }
 ];
 
