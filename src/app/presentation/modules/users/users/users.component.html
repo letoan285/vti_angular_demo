@@ -1,3 +1,20 @@
-<div class="user-page">
-    <p>User works!</p>
+<div class="container user-page mt-20px">
+    <div class="row">
+        <div class="col-4" *ngFor="let user of users">
+            <div class="card">
+                <div class="card-header">
+                    <h3>username: {{user.username}}</h3>
+                </div>
+                <div class="card-body">
+                   <a routerLink="/users/{{user.id}}">
+                       <img class="avatar-img" src="{{user.avatar}}" alt="{{user.name}}" />
+                    </a>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success" (click)="viewMore(user)">View More</button>
+                    <button class="btn btn-danger float-right" (click)="deleteUser(user)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
