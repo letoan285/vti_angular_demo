@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { FooterComponent } from './presentation/components/footer/footer.component';
 import { HomeComponent } from './presentation/components/home/home.component';
 import { AboutComponent } from './presentation/components/about/about.component';
+import { DefaultLayoutComponent } from './presentation/components/default-layout/default-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    redirectTo: 'dashboard', pathMatch: 'full'
   },
   {
     path: 'footer',
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'categories',
     loadChildren: () => import('./presentation/modules/categories/categories.module').then(m => m.CategoriesModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./presentation/modules/dashboard/dashboard.module').then(m => m.DashboardModule)
   }
 ];
 
