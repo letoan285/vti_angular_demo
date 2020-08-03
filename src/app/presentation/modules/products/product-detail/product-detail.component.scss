@@ -1,0 +1,11 @@
+.product-detail-page {
+    min-height: 300px;
+    border: 1px solid grey;   
+    .product-image {
+        max-width: 300px;
+        margin: auto;
+        img {
+            width: 100%;
+        }
+    }
+}

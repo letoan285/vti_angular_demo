@@ -4,7 +4,7 @@ import { FooterComponent } from './presentation/components/footer/footer.compone
 import { HomeComponent } from './presentation/components/home/home.component';
 import { AboutComponent } from './presentation/components/about/about.component';
 import { DefaultLayoutComponent } from './presentation/components/default-layout/default-layout.component';
-
+import {NotfoundComponent} from './presentation/components/notfound/notfound.component';
 const routes: Routes = [
   {
     path: '',
@@ -19,25 +19,35 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'users',
-    loadChildren: () => import('./presentation/modules/users/users.module').then(m => m.UsersModule)
+    path: '',
+    component: DefaultLayoutComponent,
+    children: [
+      {
+        path: 'users',
+        loadChildren: () => import('./presentation/modules/users/users.module').then(m => m.UsersModule)
+      },
+      {
+        path: 'tags',
+        loadChildren: () => import('./presentation/modules/tags/tags.module').then(m => m.TagsModule)
+      },
+      {
+        path: 'products',
+        loadChildren: () => import('./presentation/modules/products/products.module').then(m => m.ProductsModule)
+      },
+      {
+        path: 'categories',
+        loadChildren: () => import('./presentation/modules/categories/categories.module').then(m => m.CategoriesModule)
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () => import('./presentation/modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+    ]
   },
+
   {
-    path: 'tags',
-    loadChildren: () => import('./presentation/modules/tags/tags.module').then(m => m.TagsModule)
+    path: '**', component: NotfoundComponent
   },
-  {
-    path: 'products',
-    loadChildren: () => import('./presentation/modules/products/products.module').then(m => m.ProductsModule)
-  },
-  {
-    path: 'categories',
-    loadChildren: () => import('./presentation/modules/categories/categories.module').then(m => m.CategoriesModule)
-  },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./presentation/modules/dashboard/dashboard.module').then(m => m.DashboardModule)
-  }
 ];
 
 @NgModule({
