@@ -9,6 +9,7 @@ import { HomeComponent } from './presentation/components/home/home.component';
 import { DefaultLayoutComponent } from './presentation/components/default-layout/default-layout.component';
 import { AboutComponent } from './presentation/components/about/about.component';
 import { NotfoundComponent } from './presentation/components/notfound/notfound.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -18,12 +19,14 @@ import { NotfoundComponent } from './presentation/components/notfound/notfound.c
     HomeComponent,
     DefaultLayoutComponent,
     AboutComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
+  exports: [HighlightDirective],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+// import { HighlightDirective } from 'src/app/highlight.directive';
 
 
 
@@ -10,6 +11,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
   declarations: [ProductsComponent, ProductDetailComponent],
   imports: [
     CommonModule,
+    // HighlightDirective,
     ProductsRoutingModule
   ]
 })

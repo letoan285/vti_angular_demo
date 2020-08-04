@@ -1,10 +1,10 @@
 <div class="product-page container mt-20px">
-    <h2>Product List</h2>
+    <h2 appHighlight>Product List</h2>
     <div class="row">
         <div class="col-4 mt-3" *ngFor="let product of products">
                 <div class="card">
-                    <h3>Name: {{product.name}}</h3>
-                    <div>
+                    <h3 appHighlight>Name: {{product.name}}</h3>
+                    <div >
                        <a routerLink="/products/{{product.id}}"> 
                             <img width="100%" src="{{product.image}}" alt="">
                         </a>
